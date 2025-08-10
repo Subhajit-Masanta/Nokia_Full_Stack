@@ -1,0 +1,230 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Drawer Animation - Optimized for Performance */
+@keyframes slideInSmooth {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.MuiDrawer-paper.animate-slide-in {
+  animation: slideInSmooth 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+/* Fixed Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1200;
+  background: linear-gradient(135deg, #0D47A1 0%, #1565C0 50%, #1976D2 100%);
+  box-shadow: 0 8px 25px rgba(13, 71, 161, 0.4);
+  color: #ffffff !important;
+  padding: 15px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.header * {
+  background: transparent !important;
+  color: white !important;
+}
+
+/* Main Container - Optimized Transitions */
+.main-container {
+  margin-top: 75px;
+  display: flex;
+  background: #f4f7fb;
+  transition: margin-left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: margin-left;
+}
+
+.main-container.drawer-open {
+  margin-left: 280px; /* Same width as the drawer */
+}
+
+/* Main Content - Optimized Performance */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: calc(100vh - 96px);
+  transform: translateZ(0); /* Force hardware acceleration */
+}
+
+/* Normal view styles (non-user-manual) */
+.main:not(.user-manual-view) {
+  background: #f4f7fb;
+  margin: 2px;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.main-top-row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  height: 100%;
+  align-items: stretch;
+  margin-bottom: 0px;
+  flex: 1;
+}
+
+.live_data {
+  width: 60%;
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+}
+
+.people {
+  width: 40%;
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+}
+
+/* Analytics View */
+.analytics-view {
+  width: 100%;
+  height: 100%; /* Full height */
+  padding: 3px; 
+  display: flex;
+  flex-direction: column;
+}
+
+.analytics-charts {
+  display: flex;
+  flex-direction: row;
+  gap: 6px; /* gap between charts */
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+.chart-container {
+  background: white;
+  padding: 14px; /* Reduced from 24px */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  flex: 1;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-container h3 {
+  color: #102e63;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .main-top-row {
+    flex-direction: column;
+  }
+  .live_data,
+  .people {
+    width: 100%;
+  }
+  .analytics-charts {
+    flex-direction: column;
+    padding: 12px;
+  }
+  .chart-container {
+    width: 100%;
+    padding: 16px;
+  }
+  
+  .user-manual-container {
+    padding: 0;
+  }
+  
+  .main.user-manual-view {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Drawer Overrides - Performance Optimized */
+.MuiDrawer-root {
+  z-index: 1100 !important;
+  background: transparent !important;
+}
+
+.MuiDrawer-paper {
+  transform: translateZ(0); /* Force hardware acceleration */
+  backface-visibility: hidden; /* Prevent flickering */
+}
+
+.MuiBackdrop-root {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* User Manual Integration Styles */
+.user-manual-container {
+  width: 100%;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  background: #f4f7fb;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Ensure User Manual doesn't inherit conflicting styles */
+.user-manual-container .user-manual {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+/* Override any conflicting typography in User Manual */
+.user-manual * {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+}
+
+/* Ensure proper spacing for User Manual when header is present */
+.main.user-manual-view {
+  margin-top: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  height: calc(100vh - 80px);
+}

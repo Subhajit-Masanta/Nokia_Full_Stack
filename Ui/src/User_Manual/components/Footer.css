@@ -1,0 +1,20 @@
+/* Footer Component Styles */
+.manual-footer {
+  text-align: center;
+  margin-top: auto;
+  padding: 8px 0;
+  width: 100%;
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.manual-footer p {
+  margin: 0;
+  color: #a1a1aa;
+  font-size: 0.625rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}

@@ -1,0 +1,299 @@
+/* Layout Component Styles */
+.user-manual {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 80px);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 0;
+  background-color: #f8fafc;
+}
+
+/* Base Typography */
+.user-manual h2 {
+  color: #f1f2f4;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #102e63;
+}
+
+.user-manual h3 {
+  color: #1565c0;
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.user-manual h4 {
+  color: #102e63;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.user-manual p,
+.user-manual ul,
+.user-manual li {
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-size: 1.15rem;
+}
+
+.user-manual ul {
+  margin-left: 20px;
+  margin-bottom: 16px;
+}
+
+.user-manual li {
+  margin-bottom: 8px;
+}
+
+.user-manual strong {
+  color: #102e63;
+  font-weight: 600;
+}
+
+/* Manual Layout Container */
+.user-manual-layout {
+  display: flex;
+  min-height: auto;
+  overflow: visible;
+  padding: 20px;
+  gap: 20px;
+  flex-direction: row;
+}
+
+/* Sidebar Styles */
+.manual-sidebar {
+  width: 280px;
+  background-color: #f5f7fa;
+  border-right: 1px solid #e2e8f0;
+  padding: 16px;
+  overflow: visible;
+  height: auto;
+  max-height: none;
+  position: static;
+  top: auto;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* Sidebar Title Styling to match original */
+.manual-sidebar-title {
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+  color: #1565c0 !important;
+  margin-bottom: 18px !important;
+  margin-left: 2px !important;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+}
+
+.manual-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 8px;
+}
+
+.manual-sidebar li {
+  padding: 10px 12px;
+  cursor: pointer;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+  color: #102e63;
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.manual-sidebar li:hover {
+  background-color: #e3f2fd;
+}
+
+.manual-sidebar li.active {
+  background-color: #e3f2fd;
+  box-shadow: 0 2px 12px 0 rgba(21, 101, 192, 0.18), 0 1.5px 6px rgba(0,0,0,0.06);
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+/* Content Area Styles */
+.manual-section-content {
+  flex: 1;
+  padding: 20px;
+  display: block;
+  min-height: auto;
+  overflow: visible;
+}
+
+/* Main content heading - ensuring blue color like the original */
+.manual-section-content h2 {
+  font-size: 2rem !important;
+  margin-bottom: 20px !important;
+  color: #1565c0 !important;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+  font-weight: 700 !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+  padding-bottom: 10px !important;
+}
+
+.manual-section-content > div {
+  overflow: visible;
+  padding-right: 0;
+}
+
+.manual-section-content > div::-webkit-scrollbar {
+  display: none;
+}
+
+.manual-section-content h3 {
+  font-size: 1.5rem;
+  margin: 24px 0 16px 0;
+  color: #1565c0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+}
+
+.manual-section-content h4 {
+  font-size: 1.5rem;
+  margin: 20px 0 12px 0;
+  color: #1565c0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+}
+
+.manual-section-content h5 {
+  font-size: 1.2rem;
+  margin: 16px 0 8px 0;
+  color: #0f172a;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+}
+
+.manual-section-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  color: #64748b;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.manual-section-content ul {
+  margin: 12px 0 16px 0;
+  padding-left: 24px;
+}
+
+.manual-section-content li {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 6px;
+  color: #64748b;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.manual-section-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.manual-section-content th,
+.manual-section-content td {
+  border: 1px solid #e2e8f0;
+  padding: 12px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.manual-section-content th {
+  background-color: #f1f5f9;
+  color: #1565c0;
+  font-weight: 600;
+}
+
+/* Back Button Styles */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 1rem;
+  color: #64748b;
+  font-weight: 500;
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  border-color: rgba(21, 101, 192, 0.3);
+  color: #1565c0;
+  transform: translateX(-2px);
+  box-shadow: 0 4px 16px rgba(21, 101, 192, 0.2);
+}
+
+.back-button:active {
+  transform: translateX(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dynamic Page Container */
+.manual-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 80px);
+}
+
+.manual-page-container .user-manual-layout {
+  flex: 1;
+  min-height: auto;
+}
+
+.dynamic-footer {
+  margin-top: auto;
+  flex-shrink: 0;
+  position: sticky;
+  bottom: 0;
+}
+
+/* Layout Responsive Styles */
+@media (max-width: 1200px) {
+  .user-manual-layout {
+    flex-direction: column;
+    gap: 15px;
+    min-height: auto;
+  }
+  
+  .manual-sidebar {
+    width: 100%;
+    max-height: none;
+    position: static;
+    top: 0;
+  }
+  
+  .manual-sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .manual-sidebar li {
+    padding: 8px 12px;
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+}

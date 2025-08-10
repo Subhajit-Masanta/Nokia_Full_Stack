@@ -1,0 +1,98 @@
+
+.troubleshooting-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1rem;
+  padding: 24px;
+  color: #102e63;
+  background: #ffffff;
+  height: 100%;
+}
+/* Custom Toggle */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px; width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #0d47a1;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+
+.trouble-header h1 {
+  font-size: 1.9rem;
+  margin-bottom: 8px;
+}
+
+.trouble-header p {
+  font-size: 1.2rem;
+  color: #475569;
+}
+
+.trouble-content {
+  display: flex;
+  margin-top: 20px;
+}
+
+.trouble-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 250px;
+}
+
+.trouble-nav button {
+  padding: 14px 20px;
+  background-color: #e2e8ff;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.trouble-nav button:hover {
+  background-color: #c7d2fe;
+}
+
+.trouble-panel {
+  flex: 1;
+  background: #f8fafc;
+  margin-left: 32px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}

@@ -1,0 +1,240 @@
+.weightlist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 11px;
+  border: 1px solid rgba(18, 65, 145, 0.25);
+  box-shadow: 
+    0 20px 60px rgba(18, 65, 145, 0.15),
+    0 8px 25px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  padding: 12px 15px 10px 15px;
+  background: linear-gradient(135deg, #ffffff 0%, rgba(248, 250, 252, 0.95) 50%, rgba(241, 245, 249, 0.9) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.weightlist-grid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(18, 65, 145, 0.6), transparent);
+}
+
+.weightlist-card {
+  height: 125px;
+  border-radius: 18px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.weightlist-card:not(.is-live) {
+  opacity: 0.85;
+  filter: saturate(0.85) brightness(0.95);
+  transition: all 0.3s ease;
+}
+
+.weightlist-card.is-live {
+  z-index: 2;
+  animation: cardBounce 1.8s ease-in-out infinite;
+  position: relative;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 12px 35px rgba(0, 0, 0, 0.2),
+    0 6px 18px rgba(0, 0, 0, 0.15),
+    0 0 25px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+@keyframes cardBounce {
+  0%, 100% { 
+    transform: translateY(0) scale(1); 
+    box-shadow: 
+      0 12px 35px rgba(0, 0, 0, 0.2),
+      0 6px 18px rgba(0, 0, 0, 0.15),
+      0 0 25px rgba(255, 255, 255, 0.1);
+  }
+  50% { 
+    transform: translateY(-8px) scale(1.03); 
+    box-shadow: 
+      0 20px 45px rgba(0, 0, 0, 0.25),
+      0 10px 25px rgba(0, 0, 0, 0.2),
+      0 0 35px rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* Enhanced shimmer effect for live card */
+.weightlist-card.is-live::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(120deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 80%
+  );
+  background-size: 200% 200%;
+  animation: shimmer 3s linear infinite;
+  pointer-events: none;
+  border-radius: 18px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.weightlist-card:hover {
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.2),
+    0 8px 20px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transform: translateY(-4px) scale(1.02);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.weightlist-header {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  gap: 8px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.weightlist-label {
+  flex: 1;
+  color: #fff;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.weightlist-live {
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.4)) !important;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  padding: 6px 16px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  animation: liveGlow 1.5s ease-in-out infinite;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  box-shadow: 
+    0 4px 12px rgba(255, 255, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+@keyframes liveGlow {
+  0% { 
+    box-shadow: 
+      0 4px 12px rgba(255, 255, 255, 0.2),
+      0 0 15px rgba(255, 255, 255, 0.3);
+  }
+  50% { 
+    box-shadow: 
+      0 6px 18px rgba(255, 255, 255, 0.3),
+      0 0 25px rgba(255, 255, 255, 0.5);
+  }
+  100% { 
+    box-shadow: 
+      0 4px 12px rgba(255, 255, 255, 0.2),
+      0 0 15px rgba(255, 255, 255, 0.3);
+  }
+}
+
+.weightlist-value {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  margin-top: 6px;
+  text-shadow: 
+    0 3px 8px rgba(0, 0, 0, 0.4),
+    0 1px 2px rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+.weightlist-unit {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-left: 4px;
+  opacity: 0.95;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 900px) {
+  .weightlist-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 18px;
+  }
+  
+  .weightlist-card {
+    height: 110px;
+    padding: 16px;
+  }
+  
+  .weightlist-value {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .weightlist-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 16px;
+  }
+  
+  .weightlist-card {
+    height: 105px;
+    padding: 14px;
+  }
+  
+  .weightlist-value {
+    font-size: 1.8rem;
+  }
+  
+  .weightlist-header {
+    font-size: 16px;
+  }
+}
+
+/* Add this at the end of your CSS file */
+.weightlist-grid::after {
+  content: 'Operational Day: 6:15 AM to 6:15 AM Next Day';
+  position: absolute;
+  bottom: -8px;
+  right: 20px;
+  font-size: 10px;
+  color: rgba(18, 65, 145, 0.7);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transform: translateY(50%);
+  border: 1px solid rgba(18, 65, 145, 0.2);
+}
+
+

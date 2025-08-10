@@ -1,0 +1,209 @@
+.rightcard-custom {
+  background: linear-gradient(
+    135deg,
+    rgba(18, 65, 145, 0.06) 0%,
+    rgba(18, 65, 145, 0.10) 50%,
+    rgba(18, 65, 145, 0.14) 100%
+  );
+  backdrop-filter: blur(8px);
+  color: #0f172a;
+  border-radius: 24px;
+  border: 1px solid rgba(18, 65, 145, 0.25);
+  box-shadow: 
+    0 20px 60px rgba(18, 65, 145, 0.12),
+    0 8px 25px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  height: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 1rem 1rem 1rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.rightcard-custom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(18, 65, 145, 0.5), transparent);
+}
+
+.gif-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.impact-gif {
+  /* CIRCLE SIZE - Change these values to adjust size */
+  width: 210px;              /* Adjust width (increase/decrease for larger/smaller circle) */
+  height: 210px;             /* Adjust height (keep same as width for perfect circle) */
+  
+  /* CIRCLE SHAPE - Change border-radius to adjust roundness */
+  border-radius: 50%;        /* 50% = perfect circle, lower % = more rectangular */
+  
+  /* IMAGE FITTING */
+  object-fit: cover;         /* 'cover' fills circle, 'contain' shows full image */
+  
+  /* VISUAL EFFECTS */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s ease, filter 0.3s ease;
+  border: 3px solid #cbd5e1; /* Border thickness - adjust px value */
+  
+  /* Center the image */
+  object-position: center;
+}
+
+.impact-gif:hover {
+  transform: scale(1.08);
+}
+
+/* Image effects based on waste levels */
+.impact-gif.low-waste {
+  box-shadow: 0 12px 30px rgba(22, 163, 74, 0.3);
+  border-color: #16a34a;
+}
+
+.impact-gif.moderate-waste {
+  box-shadow: 0 12px 30px rgba(234, 179, 8, 0.3);
+  border-color: #eab308;
+}
+
+.impact-gif.high-waste {
+  box-shadow: 0 12px 30px rgba(220, 38, 38, 0.3);
+  border-color: #dc2626;
+  filter: saturate(1.2);
+}
+
+.fed-section {
+  text-align: center;
+}
+
+.fed-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 1.0rem;
+  letter-spacing: 0.5px;
+  color: #0f172a;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.fed-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  gap: 3rem;
+  margin-top: 0.5rem;
+}
+
+.fed-col {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+}
+
+.fed-label {
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  font-size: 1.5rem;
+  color: #334155;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.people-count {
+  font-weight: 800 !important;
+  margin: 0.5rem 0 0.2rem 0;
+  font-size: 2.9rem !important;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Green threshold: 0-50 people (low waste - good) */
+.people-count-green {
+  color: #16a34a !important;
+  text-shadow: 0 2px 4px rgba(22, 163, 74, 0.3);
+}
+
+/* Yellow threshold: 51-150 people (moderate waste - warning) */
+.people-count-yellow {
+  color: #eab308 !important;
+  text-shadow: 0 2px 4px rgba(234, 179, 8, 0.3);
+}
+
+/* Red threshold: 151+ people (high waste - critical) */
+.people-count-red {
+  color: #dc2626 !important;
+  text-shadow: 0 2px 4px rgba(220, 38, 38, 0.3);
+}
+
+.impact-text {
+  color: #475569 !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem;
+}
+
+.calculation-info {
+  color: #475569 !important;
+  font-size: 0.9rem !important;
+}
+
+/* SIZE VARIATIONS - Uncomment the one you prefer */
+
+/* Small size option */
+/*
+.impact-gif {
+  width: 120px;
+  height: 120px;
+}
+*/
+
+/* Medium size option */
+/*
+.impact-gif {
+  width: 200px;
+  height: 200px;
+}
+*/
+
+/* Large size option */
+/*
+.impact-gif {
+  width: 250px;
+  height: 250px;
+}
+*/
+
+/* SHAPE VARIATIONS - Uncomment to try different shapes */
+
+/* Rounded rectangle */
+/*
+.impact-gif {
+  border-radius: 20px;
+}
+*/
+
+/* Slightly rounded circle */
+/*
+.impact-gif {
+  border-radius: 40%;
+}
+*/
+
+/* Square with rounded corners */
+/*
+.impact-gif {
+  border-radius: 15px;
+}
+*/
